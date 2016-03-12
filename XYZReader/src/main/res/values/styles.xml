@@ -22,6 +22,7 @@
         <item name="colorPrimaryDark">@color/indigo_700</item>
         <item name="colorAccent">@color/pink_a200</item>
         <item name="android:textColorLink">@color/pink_a200</item>
+        <item name="android:textColorPrimary">#000000</item>
     </style>
 
     <style name="Theme.Bacon.Detail">
