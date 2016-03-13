@@ -217,6 +217,20 @@ public class ArticleDetailFragment extends Fragment implements
 
                         }
                     });
+
+            mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
+                            .setType("text/plain")
+                            .setSubject("Check out what I am reading!")
+                            .setText("I am reading about \"" + mCursor.getString(ArticleLoader.Query.TITLE)
+                                    + "\".\n\nIt was written by "
+                                    + mCursor.getString(ArticleLoader.Query.AUTHOR)
+                                    + ".\n\nRegards.")
+                            .getIntent(), getString(R.string.action_share)));
+                }
+            });
         } else {
             mRootView.setVisibility(View.GONE);
             titleView.setText("N/A");
